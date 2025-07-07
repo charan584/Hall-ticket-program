@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+	int htn,tel,eng,m_a,m_b,phy,che,total;
+	float avg;
+	char name[20];
+	clrscr();
+	printf("Enter hall ticket number:");
+	scanf("%d",&htn);
+	printf("enter students name:");
+	scanf("%s",&name);
+	printf("Enter telugu,english,maths a,maths b,physics,chemictry marks:");
+	scanf("%d%d%d%d%d%d",&tel,&eng,&m_a,&m_b,&phy,&che);
+	total=tel+eng+m_a+m_b+phy+che;
+	avg=total/6;
+	clrscr();
+	printf("\n\t................................");
+	printf("\n\t\tSTUDENTS MARKS LIST");
+	printf("\n\t................................");
+	printf("\n\tHall ticket number:%d",htn);
+	printf("\n\tStudents name     :%s",name);
+	if((tel>=35)&&(eng>=35)&&(m_a>=27)&&(m_b>=27)&&(phy>=35)&&(che>=35))
+	{
+		printf("\n\tResult      :pass");
+		printf("\n\tTelugu      :%d",tel);
+		printf("\n\tEnglish     :%d",eng);
+		printf("\n\tMaths a     :%d",m_a);
+		printf("\n\tMaths b     :%d",m_b);
+		printf("\n\tPhysics     :%d",phy);
+		printf("\n\tChemistry   :%d",che);
+		printf("\n\t.....................");
+		printf("\n\tTotal marks  :%d",total);
+		printf("\n\tAverage marks:%.2f",avg);
+		if(avg>90)
+		{
+			printf("\n\t Grade :A+");
+		}
+	       else
+		{
+			if(avg>80)
+			{
+				printf("\n\t Grade :A");
+			}
+			else
+			{
+				if(avg>70)
+				{
+					printf("\n\t Grade :B+");
+				}
+				else
+				{
+					if(avg>60)
+					{
+						printf("\n\t Grade :B");
+					}
+					else
+					{
+						if(avg>50)
+						{
+							printf("\n\t Grade :C+");
+						}
+						else
+						{
+							if(avg>40)
+							{
+								printf("\n\t Grade :C");
+							}
+							else
+							{
+								printf("\n\t Grade :D");
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		printf("Result :FAIL");
+		printf("\n\t Grade :F");
+	}
+	getch();
+	return 0;
+}
